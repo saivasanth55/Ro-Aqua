@@ -493,7 +493,7 @@ function Dashboard() {
       </div>
 
       <div className="water-stats">
-        <div className="stat-card water-level" style={{ display:'none' }}>
+        <div className="stat-card water-level"  style={{ display:'none' }}>
           <div className="stat-icon water-level">
             <i className="fas fa-water"></i>
           </div>
