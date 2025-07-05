@@ -1971,9 +1971,7 @@ body {
     font-size: 0.9rem; /* Slightly smaller font */
   }
 
-    .stat-card.ph-level{
-      margin-left:100px;
-    }
+   
 
   /* Hide TDS, Water Consumption, and Cumulative Consumption stat cards */
   
