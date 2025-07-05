@@ -877,6 +877,7 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid white;
+  
 }
 
 .notification-dropdown {
@@ -890,6 +891,7 @@ body {
   z-index: 10000;
   overflow-y: auto;
   display: none;
+  
 }
 
 .notification-dropdown.show {
@@ -921,6 +923,7 @@ body {
   max-height: 300px;
   overflow-y: auto;
   list-style: none;
+  
 }
 
 .notification-dropdown-item {
@@ -931,6 +934,7 @@ body {
   border-bottom: 1px solid #e5e7eb;
   transition: background 0.2s;
   cursor: pointer;
+  
 }
 
 .notification-dropdown-item:hover {
@@ -950,6 +954,7 @@ body {
   justify-content: center;
   font-size: 14px;
   color: white;
+  
 }
 
 .notification-dropdown-icon.critical {
@@ -1848,6 +1853,71 @@ body {
   .logo-toggle-container {
     display: none;
   }
+
+  /* Add user-profile styles */
+  .user-section {
+    display: flex; /* Override display: none */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: 1; /* Match nav-links li flex behavior */
+  }
+
+  .user-profile {
+    display: flex; /* Override display: none */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: 1; /* Match nav-links li */
+    border-bottom: 3px solid transparent; /* Match nav-links li */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Match nav-links li */
+    border-radius: 0; /* Match nav-links li */
+  }
+
+  .user-profile:hover {
+    background: rgba(255, 255, 255, 0.1); /* Match nav-links li hover */
+    transform: none; /* Match nav-links li hover */
+  }
+
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 18px; /* Match nav-links i font-size */
+    min-width: 0; /* Override min-width for compact layout */
+  }
+
+  .user-info {
+    display: none; /* Hide user-name and user-role text */
+  }
+
+  /* Add logout-btn styles */
+  .logout-btn {
+    display: flex; /* Override display: none */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex: 1; /* Match nav-links li */
+    border-bottom: 3px solid transparent; /* Match nav-links li */
+    color: #ffa4a4; /* Maintain existing logout button color */
+    font-size: 20px; /* Match nav-links i */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Match nav-links li */
+    border-radius: 0; /* Match nav-links li */
+  }
+
+  .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.1); /* Match nav-links li hover */
+    transform: none; /* Match nav-links li hover */
+  }
+
+  .logout-btn i {
+    font-size: 20px; /* Match nav-links i */
+  }
+
+  .logout-btn .nav-text {
+    display: none; /* Hide Logout text */
+  }
 }
 
 /* Small mobile devices (max-width: 480px) */
@@ -1855,6 +1925,132 @@ body {
   .sidebar {
     padding: 8px 0;
   }
+
+.water-stats {
+    display: grid; /* Change from flex to grid */
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    gap: 10px; /* Space between stat cards */
+    margin-bottom: 20px; /* Maintain spacing */
+    margin-top: 20px; /* Maintain spacing */
+    width: 100%; /* Full width */
+    max-width: 100%; /* Ensure no overflow */
+  }
+
+  /* Show only Water Level and pH Level stat cards */
+  .stat-card.water-level
+  .stat-card.ph-level
+  .stat-card.water-consumption
+  .stat-card.tds
+  {
+    display: flex; /* Ensure card is visible */
+    width: 100%; /* Full width of grid cell */
+    height: 100px; /* Slightly reduce height for compactness */
+    padding: 3px; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Slightly smaller font */
+  }
+
+    .stat-card.ph-level{
+      margin-left:100px;
+    }
+
+  /* Hide TDS, Water Consumption, and Cumulative Consumption stat cards */
+  
+
+  .stat-card .stat-info h3 {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  .stat-card .stat-info p {
+    font-size: 0.8rem; /* Adjust font size */
+  }
+
+  .stat-icon {
+    width: 25px; /* Smaller icon for compact layout */
+    height: 25px;
+    font-size: 12px; /* Smaller icon font size */
+  }
+
+  .stat-status {
+    font-size: 0.8rem; /* Smaller status text */
+    padding: 8px; /* Adjust padding */
+  }
+
+.notification-dropdown {
+width:200px !important;
+}
+
+
+
+
+
+
+
+/* Add user-profile styles */
+  .user-section {
+    display: flex; /* Override display: none from max-width: 768px */
+    justify-content: center;
+    align-items: center;
+    padding: 8px; /* Match sidebar padding */
+    flex: 1; /* Match nav-links li */
+  }
+
+  .user-profile {
+    display: flex; /* Override display: none from max-width: 768px */
+    justify-content: center;
+    align-items: center;
+    padding: 8px; /* Match nav-links li */
+    flex: 1; /* Match nav-links li */
+    border-bottom: 3px solid transparent; /* Match nav-links li */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Match nav-links li */
+    border-radius: 0; /* Match nav-links li */
+  }
+
+  .user-profile:hover {
+    background: rgba(255, 255, 255, 0.1); /* Match nav-links li hover */
+    transform: none; /* Match nav-links li hover */
+  }
+
+  .user-avatar {
+    width: 30px; /* Slightly smaller than 768px */
+    height: 30px;
+    font-size: 16px; /* Match nav-links i */
+    min-width: 0; /* Override min-width */
+  }
+
+  .user-info {
+    display: none; /* Hide user-name and user-role text */
+  }
+
+  /* Add logout-btn styles */
+  .logout-btn {
+    display: flex; /* Override display: none from max-width: 768px */
+    justify-content: center;
+    align-items: center;
+    padding: 8px; /* Match nav-links li */
+    flex: 1; /* Match nav-links li */
+    border-bottom: 3px solid transparent; /* Match nav-links li */
+    color: #ffa4a4; /* Maintain existing logout button color */
+    font-size: 18px; /* Match nav-links i */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Match nav-links li */
+    border-radius: 0; /* Match nav-links li */
+  }
+
+  .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.1); /* Match nav-links li hover */
+    transform: none; /* Match nav-links li hover */
+  }
+
+  .logout-btn i {
+    font-size: 18px; /* Match nav-links i */
+  }
+
+  .logout-btn .nav-text {
+    display: none; /* Hide Logout text */
+  }
+
+
 
   .nav-links li {
     padding: 8px;
@@ -1868,8 +2064,10 @@ body {
     padding: 0 10px;
   }
 
-  .header-left h1 {
-    font-size: 18px;
+  .header-left h2{
+    font-size: 15px;
+    font-weight: 1200;
+    
   }
 
   .search-box {
@@ -1891,6 +2089,8 @@ body {
   .report-card,
   .tip-card {
     padding: 10px;
+    font-size:10px;
+    overflow:hidden;
   }
 
   .chart-title,
@@ -1907,6 +2107,8 @@ body {
     font-size: 12px;
   }
 
+ 
+
   .notification-table th,
   .notification-table td {
     padding: 8px;
@@ -1918,16 +2120,42 @@ body {
     top: 55px;
   }
 
-  .diagram-container {
+  /* .diagram-container {
     min-height: 250px;
   }
 
   .svg-container text {
-    font-size: 10px;
+    font-size: 19px;
   }
 
   .svg-container text.value {
-    font-size: 11px;
+    font-size: 21px;
+
+  } */
+   /* Updated diagram-container and svg-container styles */
+  .diagram-container {
+    min-height: 250px; /* Increased from 250px for larger diagram */
+    width: 100%;
+    max-width: 100%;
+    padding: 15px; /* Slightly reduced for balance */
+    margin-bottom: 20px; /* Adjusted for spacing */
+  }
+
+  .svg-container {
+    width: 100%;
+    height: 100%;
+    padding: 10px; /* Reduced from 15px to maximize content area */
+    aspect-ratio: 4 / 2; /* Maintain aspect ratio */
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .svg-container text {
+    font-size: 16px; /* Increased from 12px for better readability */
+  }
+
+  .svg-container text.value {
+    font-size: 21px; /* Increased from 14px for better readability */
   }
 
   .form-input {
