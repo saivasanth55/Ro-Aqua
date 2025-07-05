@@ -100,8 +100,18 @@ function Dashboard() {
       { name: 'High Threshold', data: [{ x: 'Water Level', y: 90 }, { x: 'TDS', y: 100 }, { x: 'pH Level', y: 8.0 }] },
     ],
     options: {
-      chart: { type: 'bar', height: 350, stacked: false, toolbar: { show: true } },
-      plotOptions: { bar: { horizontal: false, dataLabels: { position: 'top', enabled: true } } },
+      chart: { 
+        type: 'bar', 
+        height: 350, 
+        stacked: false, 
+        toolbar: { show: true },
+      },
+      plotOptions: { 
+        bar: { 
+          horizontal: false, 
+          dataLabels: { position: 'top', enabled: true } 
+        } 
+      },
       colors: ['#10b981', '#ef4444', '#f59e0b'],
       dataLabels: {
         enabled: true,
@@ -109,22 +119,104 @@ function Dashboard() {
           const units = { 'Water Level': '%', 'TDS': 'ppm', 'pH Level': '' };
           return `${val.toFixed(1)} ${units[opts.w.globals.labels[opts.dataPointIndex]] || ''}`;
         },
-        style: { fontSize: '12px', fontWeight: 500, colors: ['#1f2937'] },
+        style: { 
+          fontSize: '12px', 
+          fontWeight: 500, 
+          colors: ['#1f2937'],
+        },
       },
       xaxis: {
         categories: ['Water Level', 'TDS', 'pH Level'],
-        title: { text: 'Parameters', style: { color: '#6b7280', fontSize: '14px' } },
-        labels: { style: { colors: '#6b7280', fontSize: '12px' } },
+        title: { 
+          text: 'Parameters', 
+          style: { 
+            color: '#6b7280', 
+            fontSize: '14px',
+          } 
+        },
+        labels: { 
+          style: { 
+            colors: '#6b7280', 
+            fontSize: '12px',
+          } 
+        },
       },
       yaxis: {
-        title: { text: 'Excess Value', style: { color: '#6b7280', fontSize: '14px' } },
+        title: { 
+          text: 'Excess Value', 
+          style: { 
+            color: '#6b7280', 
+            fontSize: '14px',
+          } 
+        },
         min: 0,
         max: 150,
-        labels: { formatter: (val) => val.toFixed(1), style: { colors: '#6b7280', fontSize: '12px' } },
+        labels: { 
+          formatter: (val) => val.toFixed(1), 
+          style: { 
+            colors: '#6b7280', 
+            fontSize: '12px',
+          } 
+        },
       },
-      legend: { position: 'top', horizontalAlign: 'center', fontSize: '14px', fontWeight: 500, labels: { colors: '#1f2937' } },
-      tooltip: { y: { formatter: (val) => `${val.toFixed(1)}` }, style: { fontSize: '12px', fontFamily: 'Segoe UI, sans-serif' } },
+      legend: { 
+        position: 'top', 
+        horizontalAlign: 'center', 
+        fontSize: '14px', 
+        fontWeight: 500, 
+        labels: { colors: '#1f2937' } 
+      },
+      tooltip: { 
+        y: { formatter: (val) => `${val.toFixed(1)}` }, 
+        style: { fontSize: '12px', fontFamily: 'Segoe UI, sans-serif' } 
+      },
       grid: { borderColor: '#e5e7eb', strokeDashArray: 4 },
+      responsive: [
+        {
+          breakpoint: 1024, // For screens smaller than 1024px (e.g., tablets)
+          options: {
+            dataLabels: {
+              style: { fontSize: '10px' },
+            },
+            xaxis: {
+              title: { style: { fontSize: '12px' } },
+              labels: { style: { fontSize: '10px' } },
+            },
+            yaxis: {
+              title: { style: { fontSize: '12px' } },
+              labels: { style: { fontSize: '10px' } },
+            },
+            legend: {
+              fontSize: '12px',
+            },
+            tooltip: {
+              style: { fontSize: '10px' },
+            },
+          },
+        },
+        {
+          breakpoint: 640, // For screens smaller than 640px (e.g., mobile)
+          options: {
+            dataLabels: {
+              style: { fontSize: '8px' },
+            },
+            xaxis: {
+              title: { style: { fontSize: '10px' } },
+              labels: { style: { fontSize: '8px' } },
+            },
+            yaxis: {
+              title: { style: { fontSize: '10px' } },
+              labels: { style: { fontSize: '8px' } },
+            },
+            legend: {
+              fontSize: '10px',
+            },
+            tooltip: {
+              style: { fontSize: '8px' },
+            },
+          },
+        },
+      ],
     },
   };
 
@@ -401,11 +493,11 @@ function Dashboard() {
       </div>
 
       <div className="water-stats">
-        <div className="stat-card water-level">
+        <div className="stat-card water-level" style={{ display:'none' }}>
           <div className="stat-icon water-level">
             <i className="fas fa-water"></i>
           </div>
-          <div className="stat-info">
+          <div className="stat-info"  >
             <h4 id="water-level-value">{waterLevel.toFixed(1)}%</h4>
             <p>Water Level</p>
             <div className="stat-status status-good" title="Water level is within optimal range;">Good</div>
