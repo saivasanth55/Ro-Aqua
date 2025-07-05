@@ -1645,6 +1645,28 @@ body {
   }
 }
 
+/* Tablets and larger screens (min-width: 769px) */
+@media screen and (min-width: 769px) {
+  .water-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid with minimum 250px per card */
+    gap: 15px; /* Slightly increased gap for better spacing */
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .stat-card {
+    width: 100%; /* Full width of grid cell */
+    max-width: 350px; /* Maintain max width for consistency */
+    height: 120px;
+    padding: 10px;
+    margin: 0; /* Remove margin to fit within grid */
+  }
+}
+
 /* Mobile devices (max-width: 768px) */
 @media screen and (max-width: 768px) {
   body {
