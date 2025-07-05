@@ -14,7 +14,7 @@ function Maintenance() {
 
   const statuses = [
     { status: 'Busy', statusClass: 'status-pending' },
-    { status: 'On Leave', statusClass: 'status-overdue' },
+    { status: 'Leave', statusClass: 'status-overdue' },
     { status: 'Available', statusClass: 'status-completed' }
   ];
 
@@ -79,7 +79,7 @@ function Maintenance() {
             <th>Technician Name</th>
             <th>Technician Status</th>
             <th>Mobile No</th>
-            <th>Email</th>
+            <th style={{ display: 'none' }}>Email</th>
           </tr>
         </thead>
         <tbody>
@@ -88,8 +88,14 @@ function Maintenance() {
               <td>{item.component}</td>
               <td>{item.technician}</td>
               <td><span className={`stat-status ${item.statusClass}`}>{item.status}</span></td>
-              <td><a href={`tel:${item.mobile}`}>{item.mobile}</a></td>
-              <td><a href={`mailto:${item.email}`}>{item.email}</a></td>
+              <td >
+  <a href={`tel:${item.mobile}`}>{item.mobile}</a>
+</td>
+
+             <td style={{ display: 'none' }}>
+  <a href={`mailto:${item.email}`}>{item.email}</a>
+</td>
+
             </tr>
           ))}
         </tbody>
