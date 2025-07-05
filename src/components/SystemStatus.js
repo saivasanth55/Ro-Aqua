@@ -5,7 +5,7 @@ const generateStatusData = () => {
   const statuses = [
     { status: 'Operational', statusClass: 'status-excellent', details: 'Running smoothly' },
     { status: 'Good', statusClass: 'status-good', details: 'Functioning normally' },
-    { status: 'Needs Maintenance', statusClass: 'status-warning', details: 'Reduced efficiency detected' },
+    { status: 'Replace', statusClass: 'status-warning', details: 'Reduced efficiency detected' },
     { status: 'Replace', statusClass: 'status-critical', details: 'Clogged, requires immediate replacement' },
   ];
   return statuses[Math.floor(Math.random() * statuses.length)];
